@@ -7,9 +7,11 @@ public class movement : MonoBehaviour
 {
     private Camera cam;
     public float power;
-    private bool canDash = true;
+    public int dashCount = 2;
+    private int maxDashes = 3;
     private Rigidbody2D rb;
     int collisions;
+    public bool holding;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         doDash();
@@ -48,24 +50,32 @@ public class movement : MonoBehaviour
         //
         if (Input.GetAxis("Fire1") == 1)
         {
-            if (canDash)
+            
+            
+
+            if (dashCount > 0 && !holding)
             {
-                canDash = false;
+                dashCount--;
                 rb.velocity = velocity;
             }
+            holding = true;
 
+        }
+        else
+        {
+            holding = false;
         }
     }
 
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (!canDash)
+        if (dashCount != maxDashes)
         {
             collisions++;
             if (collisions == 2)
             {
-                canDash = true;
+                dashCount++;
                 collisions = 0;
             }
         }
