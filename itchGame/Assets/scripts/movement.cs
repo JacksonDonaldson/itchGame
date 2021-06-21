@@ -7,16 +7,23 @@ public class movement : MonoBehaviour
 {
     private Camera cam;
     public float power;
-    public int dashCount = 2;
+    
     private int maxDashes = 3;
     private Rigidbody2D rb;
-    int collisions;
+
+    public int dashCount = 2;
+    public int collisions;
+
+    private AudioSource audioSource;
+    public AudioClip dashSound;
+
     public bool holding;
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
         rb = gameObject.GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
+        audioSource = gameObject.GetComponent(typeof(AudioSource)) as AudioSource;
 
         
     }
@@ -27,6 +34,7 @@ public class movement : MonoBehaviour
 
         doDash();
 
+        deathCheck();
 
         
     }
@@ -55,6 +63,7 @@ public class movement : MonoBehaviour
 
             if (dashCount > 0 && !holding)
             {
+                audioSource.PlayOneShot(dashSound);
                 dashCount--;
                 rb.velocity = velocity;
             }
@@ -67,6 +76,13 @@ public class movement : MonoBehaviour
         }
     }
 
+    void deathCheck()
+    {
+        if (rb.velocity.x && rb.velocity.y == 0 && dashCount == 0)
+        {
+            print("dead");
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {

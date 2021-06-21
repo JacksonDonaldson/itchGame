@@ -19,7 +19,7 @@ public class bounceSounds : MonoBehaviour
     {
         float vel = rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y;
         vel = Mathf.Sqrt(vel);
-        vel = Mathf.Min(vel/7, 1);
+        vel = Mathf.Min(vel/7, 1) * .66f;
 
 
         audioSource.PlayOneShot(bounces[Random.Range(0, bounces.Length)], vel);
