@@ -78,7 +78,7 @@ public class movement : MonoBehaviour
 
     void deathCheck()
     {
-        if (rb.velocity.x && rb.velocity.y == 0 && dashCount == 0)
+        if (rb.velocity.x == 0 && rb.velocity.y == 0 && dashCount == 0)
         {
             print("dead");
         }
