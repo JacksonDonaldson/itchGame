@@ -8,14 +8,19 @@ public class uiController : MonoBehaviour
 {
     // Start is called before the first frame update
     public Sprite[] dashSprites;
-    private movement m;
+    
     public Image element;
     public Text timer;
     public Text endTimer;
+    public GameObject pausePanel;
+
+
+
     public float elapsedTime;
 
-
+    private movement m;
     private bool hasClicked;
+    private bool holdingPause;
 
     public GameObject endPanel;
 
@@ -29,6 +34,8 @@ public class uiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        checkPause();
+
         if(Input.GetAxis("Fire1") == 1)
         {
             hasClicked = true;
@@ -61,6 +68,31 @@ public class uiController : MonoBehaviour
 
     }
 
+    void checkPause()
+    {
+        if (Input.GetAxisRaw("Pause") == 1)
+        {
+            print("buttoned");
+            if (!holdingPause)
+            {
+                print("and not holding");
+                holdingPause = true;
+                if(Time.timeScale != 1)
+                {
+                    resume();
+                }
+                else
+                {
+                    pause();
+                }
+            }
+        }
+        else
+        {
+            holdingPause = false;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.name == "endLevel")
@@ -80,17 +112,33 @@ public class uiController : MonoBehaviour
 
     public void restart()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void nextLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void quit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("levelSelect");
     }
 
+    public void pause()
+    {
+        print("pause");
+        Time.timeScale = 0;
+        pausePanel.SetActive(true);
+
+    }
+    public void resume()
+    {
+        print("resume");
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+    }
 }

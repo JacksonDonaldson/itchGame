@@ -32,7 +32,7 @@ public class pid
 
         float calcP = difference * p;
 
-        //calcI += i * (difference * dt);
+        calcI += (difference * dt);
 
         float calcD = d * ((difference - prevP) / dt);
 
@@ -41,7 +41,7 @@ public class pid
         prevTime = System.DateTime.Now;
 
 
-        return calcP + calcI + calcD;
+        return calcP + i* calcI + calcD;
 
     }
 }
