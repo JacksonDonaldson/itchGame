@@ -7,7 +7,7 @@ public class tetriminator : MonoBehaviour
     public GameObject[] tetriminos;
 
     public float generationSpeed = .5f;
-    private float lastTime;
+    private float lastTime = -4f;
 
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class tetriminator : MonoBehaviour
 
     void generateTetrimino()
     {
-        Vector3 position = new Vector3(Random.Range(-3, 4), 5, 0);
+        Vector3 position = new Vector3(Random.Range(-3, 4), 6, 0);
         GameObject tetrimino = tetriminos[Random.Range(0, tetriminos.Length)];
         Instantiate(tetrimino, position, Quaternion.identity);
     }

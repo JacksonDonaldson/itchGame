@@ -34,6 +34,6 @@ public class camera : MonoBehaviour
         float yDif = yDest - transform.position.y;
         float dif = Mathf.Sqrt(xDif * xDif + yDif * yDif);
         float camSpeed = camSpeedPid.calculate(dif, Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z), camSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(xDest, yDest, transform.position.z), camSpeed);
     }
 }

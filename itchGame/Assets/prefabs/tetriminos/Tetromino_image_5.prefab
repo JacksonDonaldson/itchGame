@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6794446941293193442}
   - component: {fileID: 6794446941293193447}
   - component: {fileID: 6794446941293193440}
+  - component: {fileID: 1340393838944045045}
   m_Layer: 0
   m_Name: Tetromino_image_5
   m_TagString: Untagged
@@ -109,14 +110,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.11808908, y: 0.23687862}
-      - {x: -0.12068835, y: 0.0023075938}
-      - {x: -0.35950053, y: 0.000002861023}
-      - {x: -0.35999998, y: -0.24}
-      - {x: 0.35999998, y: -0.24}
-      - {x: 0.35583493, y: 0.0063979905}
-      - {x: 0.11960411, y: 0.0014185905}
-      - {x: 0.11673835, y: 0.23861144}
+    - - {x: -0.109707914, y: 0.23687862}
+      - {x: -0.11230718, y: 0.0023075938}
+      - {x: -0.34646317, y: -0.0018596197}
+      - {x: -0.3488251, y: -0.23813751}
+      - {x: 0.34789386, y: -0.23813751}
+      - {x: 0.34652254, y: 0.00081054773}
+      - {x: 0.111222945, y: 0.0014185905}
+      - {x: 0.111150965, y: 0.2395427}
 --- !u!50 &6794446941293193440
 Rigidbody2D:
   serializedVersion: 4
@@ -129,12 +130,24 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 9999
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1340393838944045045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794446941293193443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaf4f67e6dc03044969f3ada8a16afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

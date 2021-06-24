@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3897891806578730254}
   - component: {fileID: 3897891806578730255}
   - component: {fileID: 3897891806578730240}
+  - component: {fileID: -906914471073683209}
   m_Layer: 0
   m_Name: Tetromino_image_1
   m_TagString: Untagged
@@ -96,15 +97,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 9999
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!60 &3897891806578730240
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -132,7 +133,19 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.11417478, y: 0.0041775703}
       - {x: -0.11369942, y: 0.23831509}
-      - {x: -0.35999998, y: 0.24}
-      - {x: -0.35999998, y: -0.24}
-      - {x: 0.35999998, y: -0.24}
-      - {x: 0.35831502, y: 0.0030403417}
+      - {x: -0.35649115, y: 0.24}
+      - {x: -0.35649112, y: -0.24}
+      - {x: 0.35532153, y: -0.2376609}
+      - {x: 0.3548061, y: 0.0030403417}
+--- !u!114 &-906914471073683209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897891806578730252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daaf4f67e6dc03044969f3ada8a16afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
