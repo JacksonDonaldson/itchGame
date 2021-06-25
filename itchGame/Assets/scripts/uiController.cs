@@ -14,7 +14,14 @@ public class uiController : MonoBehaviour
     public Text endTimer;
     public GameObject pausePanel;
 
+    public Image medalImage;
+    public float goldTime = 16f;
+    public float silverTime = 20f;
+    public float bronzeTime = 25f;
 
+    public Sprite goldSprite;
+    public Sprite silverSprite;
+    public Sprite bronzeSprite;
 
     public float elapsedTime;
 
@@ -35,6 +42,8 @@ public class uiController : MonoBehaviour
     void Update()
     {
         checkPause();
+
+        checkRestart();
 
         if(Input.GetAxis("Fire1") == 1)
         {
@@ -93,6 +102,13 @@ public class uiController : MonoBehaviour
         }
     }
 
+    void checkRestart()
+    {
+        if (Input.GetAxisRaw("Restart") == 1)
+        {
+            restart();
+        }
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.name == "endLevel")
@@ -106,7 +122,49 @@ public class uiController : MonoBehaviour
         endPanel.SetActive(true);
         timer.gameObject.SetActive(false);
         Time.timeScale = 0;
-        endTimer.text = "Your Time: " + timer.text;
+        endTimer.text = "Your Time: " + timer.text + "\nBest Time: ";
+        float bestTime;
+        if (PlayerPrefs.HasKey("L3"))
+        {
+            print(timer.text);
+            bestTime = Mathf.Min(PlayerPrefs.GetFloat("L3"), elapsedTime);
+        }
+        else
+        {
+            bestTime = elapsedTime;
+        }
+        print(bestTime);
+
+        endTimer.text += ((int)bestTime /60).ToString() + ":";
+            
+        
+        if (((int)bestTime % 60) < 10)
+        {
+            endTimer.text += "0";
+        }
+
+        endTimer.text += ((int)bestTime % 60).ToString();
+        if ((bestTime - (int)bestTime).ToString().Length >= 4)
+        {
+            endTimer.text += "." + (bestTime - (int)bestTime).ToString().Substring(2, 2);
+        }
+
+        //update medals
+        if (bestTime < goldTime)
+        {
+            medalImage.sprite = goldSprite;
+        }
+        else if (bestTime < silverTime)
+        {
+            medalImage.sprite = silverSprite;
+        }
+        else if (bestTime < bronzeTime)
+        {
+            medalImage.sprite = bronzeSprite;
+        }
+
+        PlayerPrefs.SetFloat("L3", bestTime);
+
 
     }
 
