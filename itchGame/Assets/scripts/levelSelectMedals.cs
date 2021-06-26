@@ -40,9 +40,9 @@ public class levelSelectMedals : MonoBehaviour
     private float L2Silver;
     private float L2Bronze;
 
-    private float L1Gold;
-    private float L1Silver;
-    private float L1Bronze;
+    private float L1Gold = 16;
+    private float L1Silver = 20;
+    private float L1Bronze = 25;
 
     private float TutGold;
     private float TutSilver;

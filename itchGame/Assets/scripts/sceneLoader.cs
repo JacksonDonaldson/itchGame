@@ -3,36 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneLoader : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void quit()
-    {
-        Application.Quit();
-    }
-    public void loadLevelSelect()
-    {
-        SceneManager.LoadScene("levelSelect");
-    }
-    public void loadMain()
+    public void mainMenu()
     {
         SceneManager.LoadScene("mainMenu");
     }
-    public void load3()
+
+    public void LevelSelect()
     {
-        SceneManager.LoadScene("level3");
+        SceneManager.LoadScene("levelSelect");
     }
-    public void load2()
-    {
-        SceneManager.LoadScene("level2");
-    }
-    public void load1()
-    {
-        SceneManager.LoadScene("level1");
-    }
-    public void loadTut()
+
+    public void tutorial()
     {
         SceneManager.LoadScene("tutorial");
     }
 
+    public void level1()
+    {
+        SceneManager.LoadScene("level1");
+    }
+
+    public void level2()
+    {
+        SceneManager.LoadScene("level2");
+    }
+
+    public void level3()
+    {
+        SceneManager.LoadScene("level3");
+    }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit!");
+    }
 }

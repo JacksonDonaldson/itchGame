@@ -30,7 +30,7 @@ public class uiController : MonoBehaviour
     private bool holdingPause;
 
     public GameObject endPanel;
-
+    public string level;
 
     void Start()
     {
@@ -124,10 +124,11 @@ public class uiController : MonoBehaviour
         Time.timeScale = 0;
         endTimer.text = "Your Time: " + timer.text + "\nBest Time: ";
         float bestTime;
-        if (PlayerPrefs.HasKey("L3"))
+
+        if (PlayerPrefs.HasKey(level))
         {
             print(timer.text);
-            bestTime = Mathf.Min(PlayerPrefs.GetFloat("L3"), elapsedTime);
+            bestTime = Mathf.Min(PlayerPrefs.GetFloat(level), elapsedTime);
         }
         else
         {
@@ -163,7 +164,7 @@ public class uiController : MonoBehaviour
             medalImage.sprite = bronzeSprite;
         }
 
-        PlayerPrefs.SetFloat("L3", bestTime);
+        PlayerPrefs.SetFloat(level, bestTime);
 
 
     }
