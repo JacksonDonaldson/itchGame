@@ -3123,8 +3123,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 184.83054, y: 244}
+  m_SizeDelta: {x: 1334.0916, y: 163.9499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746851078
 MonoBehaviour:
@@ -3173,13 +3173,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 2.7905273, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3299,8 +3299,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762694023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 290.04, y: 184.95, z: 0}
-  m_LocalScale: {x: 6.086191, y: 6.086191, z: 6.086191}
+  m_LocalPosition: {x: 290.11, y: 185.35, z: 0}
+  m_LocalScale: {x: 6.6491637, y: 6.6491637, z: 6.6491637}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 34
@@ -3615,7 +3615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.76299, y: 32.253006}
+  m_AnchoredPosition: {x: -185.76299, y: 286}
   m_SizeDelta: {x: 407.8987, y: 95.2518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849061380
@@ -3625,7 +3625,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849061378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5581,6 +5581,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c53d6fa45bfc3428ab4d662f5687ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sentenceList:
+  - Hello, welcome to *insert name here*! In this game you will use the left mouse
+    click button to dash your way through the levels.
+  - 'You will regain a dash every 2 bounces. If you ever need to pause your game
+    you can do so by pressing "esc." '
+  - When you run out of dashes and can't move anywhere or bounce off any objects
+    you can press "r" to restart the level.
+  - To end the tutorial dash into the green circle. Enjoy the game.
+  message: {fileID: 746851078}
 --- !u!4 &1519885404
 Transform:
   m_ObjectHideFlags: 0

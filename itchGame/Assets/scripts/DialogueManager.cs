@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
+    public string[] sentenceList;
+    public TMP_Text message;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        sentences = new Queue<string>();
+        StartCoroutine("en");
+    }
+
+    public IEnumerator en()
+    {
+        foreach(string sentence in sentenceList)
+        {
+            message.text = sentence;
+            yield return new WaitForSeconds(10);
+        }
     }
 
   
